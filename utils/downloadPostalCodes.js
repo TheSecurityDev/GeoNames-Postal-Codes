@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 
-// This script scrapes all the postal code files from https://download.geonames.org/export/zip/, downloads and extracts them to the data/postal-codes directory.
+// This script scrapes all the postal code files from https://download.geonames.org/export/zip/, downloads and extracts them to the Postal Codes directory.
 
 import { mkdirSync, unlinkSync, createWriteStream } from "fs";
 import { join, resolve } from "path";
