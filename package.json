@@ -1,0 +1,22 @@
+{
+  "name": "GeoNames.org Postal Codes",
+  "version": "1.0.0",
+  "description": "A repository of the postal code data from GeoNames.org. We use a script to automatically download the data.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "download_data": "node ./utils/downloadPostalCodes.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "cheerio": "1.0.0-rc.12",
+    "extract-zip": "^2.0.1"
+  },
+  "devDependencies": {
+    "@eslint/create-config": "^0.4.6",
+    "eslint": "^8.46.0"
+  }
+}
