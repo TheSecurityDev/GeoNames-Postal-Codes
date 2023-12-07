@@ -2,6 +2,8 @@
 
 // This script scrapes all the postal code files from https://download.geonames.org/export/zip/, downloads and extracts them to the Postal Codes directory.
 
+// TODO: Split large files into smaller ones (max 100MB) so they can be uploaded to GitHub
+
 import { mkdirSync, unlinkSync, createWriteStream } from "fs";
 import { join, resolve } from "path";
 import { finished as _finished } from "stream";
@@ -24,7 +26,9 @@ downloadFile(SOURCE_URL + README_FILE, join(DIRECTORY, README_FILE));
 const zipFilesToDownload = await getPostalCodeFiles(SOURCE_URL);
 
 // Download and extract the files
-downloadAndExtractFiles(SOURCE_URL, zipFilesToDownload, DIRECTORY);
+downloadAndExtractFiles(SOURCE_URL, zipFilesToDownload, DIRECTORY).then(() => {
+  console.log("Finished downloading and extracting files"); // wait for all files to be downloaded
+});
 
 // Scrape all links to zip files from the source URL
 async function getPostalCodeFiles(sourceUrl) {

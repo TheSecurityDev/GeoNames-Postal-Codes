@@ -1,6 +1,6 @@
 {
   "name": "GeoNames.org Postal Codes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A repository of the postal code data from GeoNames.org. We use a script to automatically download the data.",
   "type": "module",
   "main": "index.js",
